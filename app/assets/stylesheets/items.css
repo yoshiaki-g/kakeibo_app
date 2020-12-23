@@ -1,0 +1,65 @@
+.wrapper{
+  display: flex;
+}
+
+.side-bar{
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.side-bar-header{
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name{
+  font-size: 16px;
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.create-kakeibo{
+  font-size: 10px;
+  color: deepskyblue;
+  border: lightblue 1px solid;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.main{
+  background-color: #ffffff;
+  width: calc(100vw - 300px);
+  padding: 0 20px;
+}
+
+.items{
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+}
+
+.header{
+  height: 100px;
+  padding: 0 40px;
+}
+
+.main-item{
+  height: calc(100vh - 100px - 90px);
+  background-color: #fafafa;
+  padding: 46px 40px 0;
+}
+
+.footer{
+  height: 90px;
+  background-color: #dddddd;
+  padding: 20px 40px;
+}
+
+.important-item{
+  display: flex;
+}
