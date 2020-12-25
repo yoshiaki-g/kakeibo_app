@@ -1,13 +1,31 @@
 <div class="header">
+  <div class="left-header">
+    <div class="header-title">
+      〇〇年〇〇月
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to 'ログアウト', "#"%>
+    </div>
+  </div>
 </div>
 
 <div class="main-item">
-  <h2 class="title">今月の重点項目</h2>
-  <div class="important-item">
-    <p>"</p><%= link_to '食費', "#"%> <p>"</p>
+  <div class="left-item">
+    <h2 class="title">今月の重点項目</h2>
+      <div class="important-item">
+        <p>"</p><%= link_to '食費', "#"%> <p>"</p>
+      </div>
+    <div>30000円</div>
   </div>
-  <div>30000円</div> 
+  <div class="right-item">
+    <p class="sintyoku">進捗率<%= "〇〇" %>%</p>
+    <p>後、<%= "〇〇"%>円/日　使用できます</p>
+  </div>
 </div>
+
+<%= pie_chart Vote.group(:opinion).count%>
 
 <div class="footer">
 </div>
