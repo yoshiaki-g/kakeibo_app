@@ -69,12 +69,16 @@
   margin-top: 36px;
 }
 
+.button{
+  display: flex;
+}
+
 .header-button{
   text-decoration: none;
   color: darkred;
   border: solid 1px darkred;
   padding: 20px;
-  margin-top: 10px;
+  margin: 10px 20px;
 }
 
 .main-item{

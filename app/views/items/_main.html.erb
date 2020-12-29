@@ -5,8 +5,21 @@
     </div>
   </div>
   <div class="right-header">
-    <div class="header-button">
-      <%= link_to 'ログアウト', "#"%>
+    <div class="signed-button">
+      <% if user_signed_in? %>
+          <div class="button">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header-button" %>
+          </div>
+        <% else %>
+          <div class="button">
+            <div class="header-button">
+              <%= link_to "ログイン", new_user_session_path%>
+            </div>
+            <div class="header-button">
+              <%= link_to "新規登録", new_user_registration_path%>
+            </div>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
@@ -25,7 +38,7 @@
   </div>
 </div>
 
-<%= pie_chart Vote.group(:opinion).count%>
+<%# <%= pie_chart Vote.group(:opinion).count%>
 
 <div class="footer">
 </div>

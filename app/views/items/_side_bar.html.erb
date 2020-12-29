@@ -1,6 +1,12 @@
 <div class="side-bar-header">
   <%= link_to 'Tom', '#', class:"header-name" %>
-  <%= link_to '家計簿を作成する', '#', class:"create-kakeibo" %>
+  <div class="create-kakeibo">
+    <% if user_signed_in? %>
+      <%= link_to '家計簿を作成する', new_item_path, method: :get, class: "purchase-btn-icon" %>
+    <% else %>
+      <%= link_to '家計簿を作成する', new_user_session_path, method: :get, class: "purchase-btn-icon" %>
+    <% end %>
+  </div>
 </div>
 
 <div class="items">
@@ -14,3 +20,5 @@
     <%= link_to '貯金', '#', class:"said-items" %>
   </div>
 </div>
+
+  <%= link_to '家計簿を作成する', new_item_path, class:"create-kakeibo" %>

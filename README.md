@@ -67,20 +67,3 @@ Things you may want to cover:
 
 - has_many :items
 
-
-##  shipping_addresses テーブル
-
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| postal_code        | string     | null: false                    |
-| prefecture_id     | integer    | null: false                    |
-| cities             | string     | null: false                    |
-| address            | string     | null: false                    |
-| building_name      | string     |                                |
-| phone_number       | string     | null: false                    |
-| order              | references | null: false, foreign_key: true |
-
-
-### Association
-
-- belongs_to :orders
