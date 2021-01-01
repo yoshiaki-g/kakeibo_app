@@ -1,5 +1,40 @@
 class ItemsController < ApplicationController
   def index
+    @type = Item.pluck(:type_id)
+    @value = Item.pluck(:value)
+    @aggregate = aggregateType(@type)
+    @sum = sumType(@value)
+  end
+
+  def aggregateType(array)
+    result = [["支出",0],["収入",0],["貯金",0]]
+    array.each do |i|
+      if i == 1
+        result[0] += 1
+      elsif i == 2
+        result[1] += 1
+      else 
+        result[2] += 1
+      end
+    end
+    return result
+  end
+
+  def sumType(array)
+    result = [["支出",0],["収入",0],["貯金",0]]
+    array.each do |i|
+      if i == nil
+        result[2][1] += 1
+      else 
+        result[1][1] += 1
+      end
+    end
+    result[0][1] = array.length 
+    return result
+  end
+
+  def show
+    @items = Item.all
   end
   
   def new

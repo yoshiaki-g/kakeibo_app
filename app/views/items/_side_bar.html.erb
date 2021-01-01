@@ -1,5 +1,7 @@
 <div class="side-bar-header">
-  <%= link_to 'Tom', '#', class:"header-name" %>
+   <% if user_signed_in? %>
+      <li><%= link_to current_user.name, "#", class: "user-nickname" %></li>
+    <% end %>
   <div class="create-kakeibo">
     <% if user_signed_in? %>
       <%= link_to '家計簿を作成する', new_item_path, method: :get, class: "purchase-btn-icon" %>

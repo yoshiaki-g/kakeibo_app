@@ -1,7 +1,7 @@
 <div class="header">
   <div class="left-header">
     <div class="header-title">
-      〇〇年〇〇月
+      <%= Date.current.strftime('%Y年 %m月 %d日') %>
     </div>
   </div>
   <div class="right-header">
@@ -38,7 +38,19 @@
   </div>
 </div>
 
-<%# <%= pie_chart Vote.group(:opinion).count%>
+<%= pie_chart @aggregate,colors: ["#3333cc","#cc3333","#339966","333"], donut: true , width: "500px"%>
+<table border="1" width="500">
+  <tr>
+    <th>総投票数</th>
+    <th>有効投票数</th>
+    <th>無効投票数</th>
+  </tr>
+    <tr>
+    <th><%=@sum[0][1]%></th>
+    <th><%=@sum[1][1]%></th>
+    <th><%=@sum[2][1]%></th>
+  </tr>
+</table> 
 
 <div class="footer">
 </div>
